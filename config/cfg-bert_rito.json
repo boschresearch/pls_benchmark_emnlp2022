@@ -1,0 +1,64 @@
+{
+    "input_dir_path": "./patent_ls",
+    "dataset_filename": "ritonavir.csv",
+    "split_dir": "splits-rito",
+    "split-k": 5,
+    "dataset": "rito",
+    "doc_rep_params": {
+        "embs": [
+            {
+                "type": "bert",
+                "fields": [
+                    "Title",
+                    "Abstract"
+                ],
+                "path": "/home/ujp5kor/scratch/patent_classification/scibert-test",
+                "max_len": 512,
+                "label_text": false,
+                "trainable": true
+            },
+            {
+                "type": "bert",
+                "fields": [
+                    "Claims"
+                ],
+                "path": "/home/ujp5kor/scratch/patent_classification/scibert-test",
+                "max_len": 512,
+                "label_text": false,
+                "trainable": true
+            },
+            {
+                "type": "bert",
+                "fields": [
+                    "Description"
+                ],
+                "path": "/home/ujp5kor/scratch/patent_classification/scibert-test",
+                "max_len": 512,
+                "label_text": false,
+                "trainable": true
+            }
+        ],
+        "doc_rep_prop": {
+            "cf_agg": "sum",
+            "mf_agg": "sum",
+            "doc_agg": "concat",
+            "cf_agg_layer_norm": true,
+            "mf_agg_layer_norm": true
+        }
+    },
+    "model": "TMM",
+    "model_params": {
+        "model": "TMM",
+        "dense_layer_size": 50,
+        "dropout_rate": 0.25,
+        "learning_rate": 3e-05,
+        "epochs": 50,
+        "batch_size": 4,
+        "emb_agg": "concat",
+        "encoder_size": 768,
+        "kernel": "rbf"
+    },
+    "label_desc_file_path": "/home/ujp5kor/scratch/code/bosch-patent/output/hier_cpc/label.csv",
+    "exp_dir_prefix": "tacd",
+    "exp_dir": "/fs/scratch/rng_cr_bcai_dl/ujp5kor/output_dir/experiment-pl"
+}

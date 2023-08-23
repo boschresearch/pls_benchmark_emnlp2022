@@ -119,11 +119,29 @@ The dataset is created using [PatBase API ](https://www.patbase.com/login.asp), 
 
 ## Code
 
-*tba*
+```bash
+# train rito model with text field embeddings and graph embeddings
+python src/main.py  --cfg config/cfg-bert_rito_label_graph.json --split 4 --mode dev --option 1_split
+
+# train rito model with text field embeddings
+python src/main.py  --cfg config/cfg-bert_rito.json --split 4 --mode dev --option 1_split
+
+# train atz model with text field embeddings and graph embeddings
+python src/main.py  --cfg config/cfg-bert_atz_label_graph.json --split 4 --mode dev --option 1_split
+
+# train atz model with text field embeddings
+python src/main.py  --cfg config/cfg-bert_atz.json --split 4 --mode dev --option 1_split
+ 
+# train inj_val model with text field embeddings and graph embeddings
+python src/main.py  --cfg config/cfg-bert_inj_val_label_graph.json --split 4 --mode dev --option 1_split
+
+# train inj_val model with text field embeddings
+python src/main.py  --cfg config/cfg-bert_inj_val.json --split 4 --mode dev --option 1_split
+```
 
 ### Installation Requirements
 
-*tba*
+pip install -r requirements.txt
 
 ## License
 The manual labeled dataset created for the Patent Landscape Study located in the folder [patent_ls](patent_ls) is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/) (CC-BY-4.0).
